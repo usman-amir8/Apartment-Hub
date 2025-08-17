@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "glixen-apartment-app",
-    "slug": "glixen-apartment-app",
+    "name": "Apartment Hub",
+    "slug": "Apartment Hub",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
