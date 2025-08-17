@@ -1,50 +1,133 @@
-# Welcome to your Expo app 👋
+# 🏢 Apartment Hub
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simplified apartment rentals mobile app built with **React Native** that supports user authentication, role-based access, apartment listing, and local caching for offline access. Designed as a production-ready project demonstrating clean architecture, scalability, security, and an intuitive user experience for both realtors and regular users.
 
-## Get started
+---
 
-1. Install dependencies
+## 📋 Project Overview
 
-   ```bash
-   npm install
-   ```
+This app enables two types of users:
 
-2. Start the app
+- **Realtors:** Can create, read, update, and delete (CRUD) their own apartment listings.
+- **Regular users:** Can browse and filter apartments by price and size.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## ❓ Problem & Solution
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### The Problem
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Apartment rental platforms need to securely manage multiple user roles with different permissions, provide up-to-date listings, and support offline access in case of network issues.
 
-## Get a fresh project
+### The Solution
 
-When you're ready, run:
+This app implements:
+
+- Secure email/password authentication with user roles (realtor vs. regular user)
+- Role-based UI and functionality (CRUD for realtors, browsing/filtering for regular users)
+- Apartment listings with detailed information and images
+- Local caching of apartment data for offline browsing
+- Input validation and secure authorization to prevent unauthorized access or data manipulation
+
+---
+
+## ✨ Features
+
+- User registration and sign-in with email/password
+- Role selection during registration (Realtor or Regular User)
+- Realtors can add, edit, and delete only their own apartments
+- Regular users can browse and filter apartments by price and size
+- Apartment details include preview image, description, area size, number of rooms, and price per month
+- Local caching of apartment listings for offline use
+- Responsive UI built with React Native components and navigation
+- Input validation and graceful error handling
+- Secure authentication and authorization flows
+
+---
+
+## 🛠️ Tech Stack & Tools
+
+- **React Native** – Mobile app framework  
+- **Firebase & Firestore** – Backend services for authentication, database, and storage  
+- **AsyncStorage** – Local caching of apartment data for offline access  
+- **Expo Router** – Navigation and routing  
+- **React Hook Form** with **Zod** – Form handling and schema validation  
+- **Context API** – State management  
+- **Secure Storage** (e.g., react-native-keychain) – Secure handling of authentication tokens (optional)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js ≥ 14.x  
+- React Native CLI or Expo CLI  
+- Android Studio / Xcode for emulators or device testing  
+- Firebase project configured for Authentication and Firestore  
+
+### Installation
 
 ```bash
-npm run reset-project
-```
+git clone https://github.com/yourusername/apartment-hub.git
+cd apartment-hub
+npm install
+Setup Backend
+Configure your Firebase project
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Enable Email/Password Authentication in Firebase Authentication
 
-## Learn more
+Set up Firestore database for apartments and users
 
-To learn more about developing your project with Expo, look at the following resources:
+Update your app config files with Firebase API keys and settings
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Running the App
+For Android:
 
-## Join the community
+bash
+Copy code
+npx react-native run-android
+For iOS:
 
-Join our community of developers creating universal apps.
+bash
+Copy code
+npx react-native run-ios
+Or if using Expo:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+bash
+Copy code
+npx expo start
+🧪 Development Notes
+Strictly enforce role-based access: Realtors can modify only their own apartments.
+
+Use React Hook Form and Zod for robust form validation and error handling.
+
+Implement offline caching with AsyncStorage for seamless offline browsing.
+
+Use Expo Router to manage navigation smoothly and maintain clean routes.
+
+Keep code modular with Context API for scalable state management.
+
+Handle edge cases like network loss, auth failures, and invalid data gracefully.
+
+Follow security best practices for authentication tokens and user data privacy.
+
+🛡️ Security Considerations
+Use Firebase Authentication for secure user sign-in and role management.
+
+Validate and sanitize all inputs to prevent injection and misuse.
+
+Apply strict authorization checks on both client and backend to prevent unauthorized data access or modification.
+
+Store sensitive data securely and avoid exposing tokens or credentials.
+
+📄 License
+MIT License
+
+👤 Author
+Muhammad Usman Amir
+GitHub: usman-amir8
+
+📞 Contact
+For questions or clarifications, feel free to reach out!
+
